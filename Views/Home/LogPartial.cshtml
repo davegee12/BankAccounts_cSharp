@@ -1,0 +1,15 @@
+@using BankAccounts.Models
+@model LogUser
+<form asp-action="CreateLogUser" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="LogEmail"></span>
+        <label asp-for="LogEmail" for="exampleInputEmail1">Email:</label>
+        <input asp-for="LogEmail" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="LogPassword"></span>
+        <label asp-for="LogPassword" for="exampleInputEmail1">Password:</label>
+        <input asp-for="LogPassword" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password">
+    </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">Login!</button></p>
+</form>

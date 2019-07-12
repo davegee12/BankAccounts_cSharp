@@ -1,0 +1,34 @@
+@using BankAccounts.Models
+@model Transaction
+
+<a href="/logout"><button class="btn btn-primary">Log Out!</button></a>
+<h1>Welcome @ViewBag.LoggedInUser.FName @ViewBag.LoggedInUser.LName!</h1>
+<h2>Current balance: $@ViewBag.currentBalance</h2>
+
+<form asp-action="CreateTransaction" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Amount"></span>
+        <label>Deposit/Withdraw:</label>
+        <input asp-for="Amount" type="number" class="form-control" placeholder="Enter amount to deposit/withdraw">
+        <input asp-for="RegUserId" type="hidden" value="@ViewBag.LoggedInUser.RegUserId">
+    </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">Submit</button></p>
+</form>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var action in @ViewBag.UserTransactions)
+        {
+            <tr>
+            <th scope="row">@action.Amount</th>
+            <td>@action.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>

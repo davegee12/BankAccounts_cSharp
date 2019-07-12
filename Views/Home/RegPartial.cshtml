@@ -1,0 +1,31 @@
+@using BankAccounts.Models
+@model RegUser
+<form asp-action="CreateRegUser" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="FName"></span>
+        <label asp-for="FName" for="exampleInputEmail1">First Name:</label>
+        <input asp-for="FName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="LName"></span>
+        <label asp-for="LName" for="exampleInputEmail1">Last Name:</label>
+        <input asp-for="LName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Email"></span>
+        <label asp-for="Email" for="exampleInputEmail1">Email:</label>
+        <input asp-for="Email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Password"></span>
+        <label asp-for="Password" for="exampleInputEmail1">Password:</label>
+        <input asp-for="Password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Confirm"></span>
+        <label asp-for="Confirm" for="exampleInputEmail1">Re-enter Password:</label>
+        <input asp-for="Confirm" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm password">
+    </div>
+    <p class="text-center"><button type="submit" class="btn btn-primary">Register!</button></p>
+</form>
